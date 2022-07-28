@@ -4,34 +4,12 @@ import { testimonialsData } from '../../assets/testimonialsData'
 import RightArrow from '../../images/rightArrow.png'
 import leftArrow from '../../images/leftArrow.png'
 import {motion} from 'framer-motion'
-import axios from 'axios'
-
 
 const Testimonial = () => {
-  axios("https://phase-2-api.herokuapp.com/testimonials?")
-  // .then((data) => {data.json()})
-  .then((res) => {console.log(res.data[0])})
-
-  const HandleSubmit = (e) => {
-    e.preventDefault()
-    const formData = {
-      review: review,
-      name: name,
-      status:status
-    }
-
-  fetch("https://phase-2-api.herokuapp.com/testimonials", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body:JSON.stringify(formData)
-  })
-  
-
   const transition = {type:'spring', duration:3}
   const [selected, setSelected] = useState(0)
   const tLength = testimonialsData.length
+  
   return (
     <div className="testimonials">
         <div className="left-t">
