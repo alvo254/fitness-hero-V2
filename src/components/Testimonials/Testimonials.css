@@ -2,6 +2,7 @@
     display: flex;
     gap: 1rem;
     padding: 0 2rem;
+    height: 85vh;
 }
 .left-t{
     display: flex;

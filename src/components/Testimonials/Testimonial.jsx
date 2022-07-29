@@ -4,11 +4,31 @@ import { testimonialsData } from '../../assets/testimonialsData'
 import RightArrow from '../../images/rightArrow.png'
 import leftArrow from '../../images/leftArrow.png'
 import {motion} from 'framer-motion'
+import axios from 'axios'
+// import { getDefaultNormalizer } from '@testing-library/react'
 
 const Testimonial = () => {
   const transition = {type:'spring', duration:3}
+
   const [selected, setSelected] = useState(0)
+  const [newData, setNewData] = useState(0)
   const tLength = testimonialsData.length
+  // console.log(testimonialsData[selected])
+
+  useState(() => {
+    axios("https://phase-2-api.herokuapp.com/testimonials")
+    .then((res) => {console.log(res.data)})
+  }, [])
+  
+
+
+
+
+
+  // const getData = (resc) =>{
+  //   console.log(resc)
+
+  // }
   
   return (
     <div className="testimonials">
@@ -16,7 +36,8 @@ const Testimonial = () => {
             <span>Testimonials</span>
             <span className='stroke-text'>What they</span>
             <span>say about us</span>
-            <span>{testimonialsData[selected].review}</span>
+            <span>{newData}</span>
+            {/* <span>{testimonialsData[selected].review}</span> */}
             <span style={{color:"var(--orange)"}}>{testimonialsData[selected].name} - {testimonialsData[selected].status}</span>
         </div>
 

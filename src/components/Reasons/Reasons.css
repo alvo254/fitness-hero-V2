@@ -2,6 +2,7 @@
     padding: 0 2rem;
     display: flex;
     gap: 2rem;
+    height: 90vh;
 }
 .left-r{
     flex: 1 1;
