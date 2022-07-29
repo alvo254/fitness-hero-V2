@@ -15,20 +15,17 @@ const Testimonial = () => {
   const [newData, setNewData] = useState([])
   const tLength = testimonialsData.length
   // console.log(testimonialsData[selected])
-  const tLength2 = newData.length
-  // console.log(tLength2)
-
-
-
-  // useEffect(() =>{
-  //   axios("https://phase-2-api.herokuapp.com/testimonials")
-  //   .then((res) => {setNewData(res.data)})
-  // },[])
-  useEffect(()=>{
-    fetch("https://phase-2-api.herokuapp.com/testimonials")
-    .then((resc)=> resc.json())
-    .then((data) => setNewData(data))
+  
+  useEffect(() =>{
+    axios("https://phase-2-api.herokuapp.com/testimonials")
+    .then((data) => {setNewData(data.data)})
   },[])
+
+  // useEffect(()=>{
+  //   fetch("https://phase-2-api.herokuapp.com/testimonials")
+  //   .then((resc)=> resc.json())
+  //   .then((data) => setNewData(data))
+  // },[])
   // console.log(newData)
 
 
@@ -55,15 +52,7 @@ const Testimonial = () => {
             <span className='stroke-text'>What they</span>
             <span>say about us</span>
 
-            {/* <span>{newData.map((item)=> {
-              return item.review
-            })}</span> */}
             <span>{revDisplay[selected]}</span>
-            {/* <span>{newData.forEach((item)=> {
-              return(
-              <p>{item.review}</p>
-              )
-            } )}</span> */}
 
             {/* <span>{testimonialsData[selected].review}</span> */}
             <span style={{color:"var(--orange)"}}>{testimonialsData[selected].name} - {testimonialsData[selected].status}</span>
@@ -90,13 +79,13 @@ const Testimonial = () => {
             <img
             onClick={() => {
               selected === 0 
-            ? setSelected(tLength2 -1)
+            ? setSelected(tLength -1)
             : setSelected((prev) => prev -1) }} 
              src={leftArrow} alt="" />
 
             <img 
             onClick={() => {
-              selected === tLength2 - 1
+              selected === tLength - 1
             ? setSelected(0)
             : setSelected((prev) => prev + 1) }} 
             src={RightArrow} alt="" />
