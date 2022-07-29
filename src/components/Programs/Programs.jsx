@@ -4,6 +4,7 @@ import {programsData} from '../../assets/programsData'
 import RightArrow from '../../images/rightArrow.png'
 
 function Programs() {
+    console.log(programsData)
   return (
     <div className="Programs" id="programs">
         <div className="program-header">
@@ -17,6 +18,7 @@ function Programs() {
                     {programs.image}
                     <span>{programs.heading}</span>
                     <span>{programs.details}</span>
+
                     <div className="join-now">
                         <span>Join Now</span>
                         <img src={RightArrow} alt="" />
