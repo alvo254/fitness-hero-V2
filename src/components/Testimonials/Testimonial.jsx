@@ -21,12 +21,7 @@ const Testimonial = () => {
     .then((data) => {setNewData(data.data)})
   },[])
 
-  // useEffect(()=>{
-  //   fetch("https://phase-2-api.herokuapp.com/testimonials")
-  //   .then((resc)=> resc.json())
-  //   .then((data) => setNewData(data))
-  // },[])
-  // console.log(newData)
+
 
 
   // const retData = (newData) =>{
@@ -43,6 +38,21 @@ const Testimonial = () => {
 
     )
   }) 
+  const nameDisplay = newData.map((item)=>{
+    return(
+      item.name
+    )
+  })
+  const statusDisplay = newData.map((item)=>{
+    return(
+      item.status
+    )
+  })
+  const imgDisplay = newData.map((item)=>{
+    return(
+      item.image
+    )
+  })
 
   
   return (
@@ -55,7 +65,9 @@ const Testimonial = () => {
             <span>{revDisplay[selected]}</span>
 
             {/* <span>{testimonialsData[selected].review}</span> */}
-            <span style={{color:"var(--orange)"}}>{testimonialsData[selected].name} - {testimonialsData[selected].status}</span>
+            {/* <span style={{color:"var(--orange)"}}>{testimonialsData[selected].name} - {testimonialsData[selected].status}</span> */}
+            <span style={{color:"var(--orange)"}}>{nameDisplay[selected]} - {statusDisplay[selected]}</span>
+            <span>{imgDisplay}</span>
         </div>
 
         <div className="right-t">
