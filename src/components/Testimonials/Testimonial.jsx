@@ -5,30 +5,48 @@ import RightArrow from '../../images/rightArrow.png'
 import leftArrow from '../../images/leftArrow.png'
 import {motion} from 'framer-motion'
 import axios from 'axios'
+import { useEffect } from 'react'
 // import { getDefaultNormalizer } from '@testing-library/react'
 
 const Testimonial = () => {
   const transition = {type:'spring', duration:3}
 
   const [selected, setSelected] = useState(0)
-  const [newData, setNewData] = useState(0)
+  const [newData, setNewData] = useState([])
   const tLength = testimonialsData.length
   // console.log(testimonialsData[selected])
-
-  useState(() => {
-    axios("https://phase-2-api.herokuapp.com/testimonials")
-    .then((res) => {console.log(res.data)})
-  }, [])
-  
+  const tLength2 = newData.length
+  // console.log(tLength2)
 
 
 
+  // useEffect(() =>{
+  //   axios("https://phase-2-api.herokuapp.com/testimonials")
+  //   .then((res) => {setNewData(res.data)})
+  // },[])
+  useEffect(()=>{
+    fetch("https://phase-2-api.herokuapp.com/testimonials")
+    .then((resc)=> resc.json())
+    .then((data) => setNewData(data))
+  },[])
+  // console.log(newData)
 
 
-  // const getData = (resc) =>{
-  //   console.log(resc)
-
+  // const retData = (newData) =>{
+  //   newData.forEach((item)=> {
+  //     return item.review
+  //   })
   // }
+  // console.log(newData.forEach((item)=>{
+  //   console.log(item.review)
+  // }))
+  const revDisplay = newData.map((item) => {
+    return(
+    item.review
+
+    )
+  }) 
+
   
   return (
     <div className="testimonials">
@@ -36,7 +54,17 @@ const Testimonial = () => {
             <span>Testimonials</span>
             <span className='stroke-text'>What they</span>
             <span>say about us</span>
-            <span>{newData}</span>
+
+            {/* <span>{newData.map((item)=> {
+              return item.review
+            })}</span> */}
+            <span>{revDisplay[selected]}</span>
+            {/* <span>{newData.forEach((item)=> {
+              return(
+              <p>{item.review}</p>
+              )
+            } )}</span> */}
+
             {/* <span>{testimonialsData[selected].review}</span> */}
             <span style={{color:"var(--orange)"}}>{testimonialsData[selected].name} - {testimonialsData[selected].status}</span>
         </div>
@@ -62,13 +90,13 @@ const Testimonial = () => {
             <img
             onClick={() => {
               selected === 0 
-            ? setSelected(tLength -1)
+            ? setSelected(tLength2 -1)
             : setSelected((prev) => prev -1) }} 
              src={leftArrow} alt="" />
 
             <img 
             onClick={() => {
-              selected === tLength - 1
+              selected === tLength2 - 1
             ? setSelected(0)
             : setSelected((prev) => prev + 1) }} 
             src={RightArrow} alt="" />
