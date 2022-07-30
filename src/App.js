@@ -23,6 +23,7 @@ function App() {
         <Link to="/reasons">why us</Link>
         <Link to="/plans">Plans</Link>
         <Link to="/Testimonial">Testimonial</Link>
+        <Link to="/Join">Join</Link>
         </ul>
       </nav>
       

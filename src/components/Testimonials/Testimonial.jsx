@@ -6,6 +6,7 @@ import leftArrow from '../../images/leftArrow.png'
 import {motion} from 'framer-motion'
 import axios from 'axios'
 import { useEffect } from 'react'
+
 // import { getDefaultNormalizer } from '@testing-library/react'
 
 const Testimonial = () => {
@@ -103,6 +104,8 @@ const Testimonial = () => {
             src={RightArrow} alt="" />
           </div>
         </div>
+
+
     </div>
   )
 }
