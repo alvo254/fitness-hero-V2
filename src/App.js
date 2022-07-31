@@ -16,19 +16,9 @@ function App() {
 
     <div className='App'>
       <BrowserRouter>
-      {/* <Link to='/'>{<Hero/>}</Link> */}
-      <nav className='header1'>
-        <ul className="header-list2">
-        {/* <Link to="/">Home</Link>
-        <Link to="/programs">Programs</Link>
-        <Link to="/reasons">why us</Link>
-        <Link to="/plans">Plans</Link>
-        <Link to="/Testimonial">Testimonial</Link>
-        <Link to="/Join">Join</Link> */}
+
         <Header/>
-        </ul>
-      </nav>
-      
+
       <Routes>
         <Route path='/' element={<Hero />}/>
         <Route path='/Programs' element={<Programs/>}/>
