@@ -7,7 +7,7 @@ function Header() {
   return (
     <div className='header'>
         {/* <img src={Logo} alt="" className='logo'/> */}
-        <h1>Fitness hero</h1>
+        <h1 className='pic'> <Link to="/"> Fitness Hero</Link> </h1>
         <ul className='header-list'>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/programs">Programs</Link></li>

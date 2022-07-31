@@ -18,3 +18,19 @@
     color: var(--orange);
 }
 
+.pic{
+    text-decoration: none;
+}
+h1{
+    padding-left: 20px;
+
+}
+
+h1 a{
+    color: white;
+    text-decoration: none;
+}
+li a{
+    color: white;
+    text-decoration: none;
+}
