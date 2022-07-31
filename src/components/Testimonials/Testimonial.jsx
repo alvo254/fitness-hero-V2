@@ -46,6 +46,11 @@ const Testimonial = () => {
       item.status
     )
   })
+  const imgDisplay = newData.map((item)=>{
+    return(
+      item.image
+    )
+  })
 
 
   
@@ -62,6 +67,7 @@ const Testimonial = () => {
             {/* <span style={{color:"var(--orange)"}}>{testimonialsData[selected].name} - {testimonialsData[selected].status}</span> */}
             <span style={{color:"var(--orange)"}}>{nameDisplay[selected]} - {statusDisplay[selected]}</span>
             {/* <span>{imgDisplay}</span> could not display image through api */} 
+            <span>{imgDisplay}</span>
         </div>
 
         <div className="right-t">
