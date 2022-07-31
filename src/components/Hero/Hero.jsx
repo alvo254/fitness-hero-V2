@@ -1,6 +1,6 @@
 import React from 'react'
 import './Hero.css'
-import Header from '../Header/Header.jsx'
+// import Header from '../Header/Header.jsx'
 import hero_image from '../../images/hero_image.png'
 import hero_image_back from '../../images/hero_image_back.png'
 import Heart from "../../images/heart.png"
@@ -14,7 +14,7 @@ function Hero() {
     <div className="hero">
       <div className="blur hero-blur"></div>
         <div className="left">
-        <Header/>
+        {/* <Header/> */}
         <div className="add">
           <motion className="div"></motion>
           <motion.div

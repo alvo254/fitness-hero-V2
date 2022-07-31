@@ -11,8 +11,13 @@
     list-style: none;
     gap: 1rem;
     color: white;
+    padding-right: 120px;
 }
 .header-list > li:hover{
     cursor: pointer;
     color: var(--orange);
+}
+
+li{
+    color: white;
 }

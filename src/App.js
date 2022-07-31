@@ -8,6 +8,7 @@ import Join from './components/Join/Join'
 import Footer from './components/Footer/Footer';
 import Error from './components/Error/Error';
 import {  BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import Header from './components/Header/Header';
 
 function App() {
   return (
@@ -16,14 +17,15 @@ function App() {
     <div className='App'>
       <BrowserRouter>
       {/* <Link to='/'>{<Hero/>}</Link> */}
-      <nav className='header'>
-        <ul className="header-list">
-        <Link to="/">Home</Link>
+      <nav className='header1'>
+        <ul className="header-list2">
+        {/* <Link to="/">Home</Link>
         <Link to="/programs">Programs</Link>
         <Link to="/reasons">why us</Link>
         <Link to="/plans">Plans</Link>
         <Link to="/Testimonial">Testimonial</Link>
-        <Link to="/Join">Join</Link>
+        <Link to="/Join">Join</Link> */}
+        <Header/>
         </ul>
       </nav>
       
