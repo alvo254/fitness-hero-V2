@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Programs.css'
 import {programsData} from '../../assets/programsData'
 import RightArrow from '../../images/rightArrow.png'
@@ -6,13 +6,19 @@ import { useEffect } from 'react'
 import axios from 'axios'
 
 function Programs() {
-    const [data, setData] = ([])
+
+    const [addData, setData] = useState([])
 
     // useEffect(()=>{
     //     axios("http://localhost:3004/exercies")
-    //     .then((recv) => {console.log(recv)})
+    //     .then((recv) => {setData(recv.data)})
 
     // },[])
+    useEffect(()=>{
+        axios.get("http://localhost:3004/exercies")
+        .then((resc) => {setData(resc.data)})
+    },[])
+
 
     //For personal learning
     // fetch("http://localhost:3004/exercies", {
@@ -26,12 +32,12 @@ function Programs() {
     // .then((resp) => console.log('data', resp))
     // .then((err) => console.log(err))
 
-    axios.post("http://localhost:3004/exercies", {
-        heading: "situp",
+    // axios.post("http://localhost:3004/exercies", {
+    //     heading: "situp",
 
-    })
-    .then((resp) => {console.log(resp)})
-    .then((err)=>{console.log(err)})
+    // })
+    // .then((resp) => {console.log(resp)})
+    // .then((err)=>{console.log(err)})
 
 
   return (
@@ -42,7 +48,7 @@ function Programs() {
             <span className='stroke-text'>to shape you</span>
         </div>
         <div className="program-cat">
-            {programsData.map((programs) => (
+            {addData.map((programs) => (
                 <div className="category">
                     {programs.image}
                     <span>{programs.heading}</span>
