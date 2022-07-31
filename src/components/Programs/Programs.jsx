@@ -8,22 +8,31 @@ import axios from 'axios'
 function Programs() {
     const [data, setData] = ([])
 
-    useEffect(()=>{
-        axios("http://localhost:3004/exercies")
-        .then((recv) => {console.log(recv)})
+    // useEffect(()=>{
+    //     axios("http://localhost:3004/exercies")
+    //     .then((recv) => {console.log(recv)})
 
-    },[])
-
-    // useEffect(()=> {
-    //     axios.post("http://localhost:3004/exercises?",{
-    //         name: 'sit ups',
-            
-
-    //     })
-    //     .then((resp) => {console.log('data', resp)})
-    //     .then((err) => {console.log(err)})
-        
     // },[])
+
+    //For personal learning
+    // fetch("http://localhost:3004/exercies", {
+    //     method:"POST", headers:{"Content-Type":"application/json"},
+    //     body:JSON.stringify({
+    //         heading: "hapa",
+    //         detail: "up up"
+    //     })
+
+    // })
+    // .then((resp) => console.log('data', resp))
+    // .then((err) => console.log(err))
+
+    axios.post("http://localhost:3004/exercies", {
+        heading: "situp",
+
+    })
+    .then((resp) => {console.log(resp)})
+    .then((err)=>{console.log(err)})
+
 
   return (
     <div className="Programs" id="programs">
