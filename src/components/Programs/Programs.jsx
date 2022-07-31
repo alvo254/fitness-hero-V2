@@ -2,9 +2,29 @@ import React from 'react'
 import './Programs.css'
 import {programsData} from '../../assets/programsData'
 import RightArrow from '../../images/rightArrow.png'
+import { useEffect } from 'react'
+import axios from 'axios'
 
 function Programs() {
-    console.log(programsData)
+    const [data, setData] = ([])
+
+    useEffect(()=>{
+        axios("http://localhost:3004/exercies")
+        .then((recv) => {console.log(recv)})
+
+    },[])
+
+    // useEffect(()=> {
+    //     axios.post("http://localhost:3004/exercises?",{
+    //         name: 'sit ups',
+            
+
+    //     })
+    //     .then((resp) => {console.log('data', resp)})
+    //     .then((err) => {console.log(err)})
+        
+    // },[])
+
   return (
     <div className="Programs" id="programs">
         <div className="program-header">

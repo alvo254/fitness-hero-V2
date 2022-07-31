@@ -7,7 +7,7 @@ import {motion} from 'framer-motion'
 import axios from 'axios'
 import { useEffect } from 'react'
 
-// import { getDefaultNormalizer } from '@testing-library/react'
+
 
 const Testimonial = () => {
   const transition = {type:'spring', duration:3}
@@ -21,9 +21,6 @@ const Testimonial = () => {
     axios("https://phase-2-api.herokuapp.com/testimonials")
     .then((data) => {setNewData(data.data)})
   },[])
-
-
-
 
   // const retData = (newData) =>{
   //   newData.forEach((item)=> {
@@ -49,11 +46,7 @@ const Testimonial = () => {
       item.status
     )
   })
-  const imgDisplay = newData.map((item)=>{
-    return(
-      item.image
-    )
-  })
+
 
   
   return (
@@ -68,7 +61,7 @@ const Testimonial = () => {
             {/* <span>{testimonialsData[selected].review}</span> */}
             {/* <span style={{color:"var(--orange)"}}>{testimonialsData[selected].name} - {testimonialsData[selected].status}</span> */}
             <span style={{color:"var(--orange)"}}>{nameDisplay[selected]} - {statusDisplay[selected]}</span>
-            <span>{imgDisplay}</span>
+            {/* <span>{imgDisplay}</span> could not display image through api */} 
         </div>
 
         <div className="right-t">
