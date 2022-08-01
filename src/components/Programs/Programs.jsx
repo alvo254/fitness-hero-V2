@@ -9,15 +9,17 @@ function Programs() {
 
     const [addData, setData] = useState([])
 
+
     // useEffect(()=>{
     //     axios("http://localhost:3004/exercies")
     //     .then((recv) => {setData(recv.data)})
 
     // },[])
     useEffect(()=>{
-        axios.get("http://localhost:3004/exercies")
+        axios.get("https://programdata.herokuapp.com/exercies")
         .then((resc) => {setData(resc.data)})
     },[])
+
 
 
     //For personal learning
