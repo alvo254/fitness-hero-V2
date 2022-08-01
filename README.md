@@ -75,7 +75,12 @@ Problem statement: People with intellectual disabilities (ID) have a high preval
 Solution statement: To help reduce the high prevalence of obesity, cardiovascular disease, and physical inactivity among people with ID it is essential for fitness and wellness professionals to support their inclusion.
 
 ## Table of content
-- [Description](#my-first-heading)
+- [Description](#description)
+- [Livelink](Link)
+- [Features]
+- [Development]
+- [Setup]
+- [Deployment]
 
 
 ## my-first-heading
