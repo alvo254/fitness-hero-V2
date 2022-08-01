@@ -70,17 +70,106 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
-Problem statement: People with intellectual disabilities (ID) have a high prevalence of physical inactivity and high rates of preventable health conditions, including obesity and cardiovascular disease. Increased participation in fitness and wellness activities can improve their overall health and well-being. However, many fitness and wellness organizations do not know how to effectively serve this population nor how fitness and wellness organizations do not know how to effectively serve this population nor how to support their inclusion into their programs.
+
 
 Solution statement: To help reduce the high prevalence of obesity, cardiovascular disease, and physical inactivity among people with ID it is essential for fitness and wellness professionals to support their inclusion.
 
 ## Table of content
-- [Description](#description)
+- [Description](description)
 - [Livelink](Link)
-- [Features]
-- [Development]
-- [Setup]
-- [Deployment]
+- [Features](feature)
+- [Development](development)
+- [Setup](setup)
+- [Deployment](deployment)
+- [License](license)
 
 
-## my-first-heading
+## description
+People with intellectual disabilities (ID) have a high prevalence of physical inactivity and high rates of preventable health conditions, including obesity and cardiovascular disease. Increased participation in fitness and wellness activities can improve their overall health and well-being. However, many fitness and wellness organizations do not know how to effectively serve this population nor how fitness and wellness organizations do not know how to effectively serve this population nor how to support their inclusion into their programs.
+
+# Live link - https://fitness-hero-v2.herokuapp.com/
+
+# Features
+    -[pages&navigation]
+Home page which is the landing page
+Programs page which show programs we offer
+Plan page show the available plans and payment opptions
+Testimonial page shares what people say about us
+Join page which alows the user to get in touch with us
+
+GET and POST
+For the get i created my own json api hosted on heroku(https://phase-2-api.herokuapp.com/testimonials)
+For the post i utilized Emailjs
+Framer-motion for the animations movement on the site
+
+# Development
+    - [create-react-app]
+create-react-app documentaion above or fork the repo onto your machine
+api was first tested with thunderclient
+    -[technologies used]
+Components - styled with css
+Heroku - for hosting backend and front end
+React
+
+# setup 
+steps for hositing the api 
+Create a new github repo clone it onto your machine
+Create an account on heroku 
+On heroku click link to github
+Connetc you repo that contains the api 
+Head back to cloned repo
+initialize a node project by node init
+npm install json-server to install json-server
+edit package.json scripts 
+"scripts": "node server.js"
+create a server.js file
+    contents of server.js
+
+    const jsonServer = require('json-server')
+
+    const server = jsonServer.create()
+    const router = jsonServer.router('db.json')
+
+    const middlewares = jsonServer.defaults()
+
+    server.use(middlewares)
+    server.use(router)
+
+    const port = process.env.PORT || 3000
+
+    server.listen(port, () => {
+        console.log(`JSON Server is running on port ${port}`)
+    })
+
+push back to github
+Deploy the app on heroku
+
+    -[deploying the react app]
+create a new app on heroku
+link it to the react-app repo and connect
+add https://github.com/mars/create-react-app-buildpack
+enable automatic deploys 
+deploy branch then view to view you newly created react app
+
+# License
+MIT License
+
+Copyright (c) 2022 Alvin Ndungu
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
