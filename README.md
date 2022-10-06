@@ -87,7 +87,7 @@ Solution statement: To help reduce the high prevalence of obesity, cardiovascula
 ## description
 People with intellectual disabilities (ID) have a high prevalence of physical inactivity and high rates of preventable health conditions, including obesity and cardiovascular disease. Increased participation in fitness and wellness activities can improve their overall health and well-being. However, many fitness and wellness organizations do not know how to effectively serve this population nor how fitness and wellness organizations do not know how to effectively serve this population nor how to support their inclusion into their programs.
 
-# Live link - https://fitness-hero-v2.herokuapp.com/
+# Live link -
 
 # Features
     -[pages&navigation]
