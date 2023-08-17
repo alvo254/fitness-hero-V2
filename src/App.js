@@ -7,7 +7,7 @@ import Testimonial from './components/Testimonials/Testimonial';
 import Join from './components/Join/Join'
 import Footer from './components/Footer/Footer';
 import Error from './components/Error/Error';
-import {  BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import {  BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 
 function App() {
