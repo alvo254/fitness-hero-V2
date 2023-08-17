@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Programs.css'
-import {programsData} from '../../assets/programsData'
+// import {programsData} from '../../assets/programsData'
 import RightArrow from '../../images/rightArrow.png'
 import { useEffect } from 'react'
 import axios from 'axios'
