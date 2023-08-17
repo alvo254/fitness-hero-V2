@@ -60,4 +60,4 @@ jobs:
           app-name: 'fitenesshero'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6FF60B17AD2947808540E58E8C1CA5D7 }}
-          package: .
+          package: release.zip
